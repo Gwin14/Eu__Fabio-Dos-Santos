@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--corFundo);
+  padding: 20px;
+}
+
+h1 {
+  font-family: var(--fontePrincipal);
+  color: var(--corTitulo1);
+  font-weight: normal;
+
+  animation: var(--moverParaDireita);
+}
+
+#subt {
+  font-size: 5em;
+  transform: translate(0px, -20px);
+  font-weight: bolder;
+}
+
+#resumao > p {
+  color: var(--corTitulo1);
+  font-family: var(--fontePrincipal);
+
+  margin-bottom: 30px;
+  font-size: 1.2em;
+
+  animation: var(--aparecer);
+}
+
+#perfil {
+  width: 250px;
+  margin: auto;
+  position: relative;
+}
+
+#foto-perfil {
+  position: absolute;
+  width: 100%;
+
+  animation: var(--moverParaEsquerda);
+}
+
+#quadrado {
+  position: absolute;
+  margin: auto;
+  border: 2px solid var(--corTitulo1);
+  height: 200px;
+  width: 200px;
+  z-index: -1;
+
+  animation: var(--mexendo);
+}
+
+#contatos {
+  padding: 10px;
+
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to bottom left,
+      var(--corDestaque),
+      var(--corDestaque),
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      var(--corDestaque)
+    )
+    1;
+}
+
+#contatos > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.contItem {
+  color: var(--corTitulo1);
+  font-family: var(--fontePrincipal);
+  text-decoration: none;
+  animation: var(--aparecer);
+
+  margin: 5px;
+}
+
+.contItem:hover {
+  color: var(--corDestaque);
+}
+
+#euHoje {
+  background-color: var(--corDestaque);
+
+  margin: -20px;
+  padding: 20px;
+
+  animation: var(--aparecer);
+}
+
+#hojeTitulo {
+  font-family: var(--fontePrincipal);
+  font-weight: bolder;
+  font-size: 2.2em;
+
+  color: var(--corFundo);
+
+  animation: var(--moverParaDireita);
+}
+
+.hojeTexto {
+  font-family: var(--fontePrincipal);
+  font-size: 1.2em;
+
+  margin-bottom: 20px;
+}
+
+/* ------ */
+
+#divisor {
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--corDestaque);
+
+  transform: translate(0px, -12px);
+
+  animation: var(--aparecer);
+}
+
+#divisor2 {
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(to right, var(--corFundo), transparent);
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  animation: var(--aparecer);
+}
+
+#informacoes {
+  transform: translate(0px, 300px);
+}
