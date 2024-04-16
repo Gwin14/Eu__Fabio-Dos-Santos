@@ -13,6 +13,7 @@
   --moverParaEsquerda: moverParaEsquerda 1s ease forwards;
   --aparecer: aparecer 1s ease forwards;
   --mexendo: mexendo 4s ease-out infinite;
+  --nome: nome 2s ease-in-out;
 }
 
 @keyframes moverParaDireita {
@@ -57,5 +58,17 @@
   }
   100% {
     transform: translate(5px, 5px);
+  }
+}
+
+@keyframes nome {
+  0% {
+    color: var(--corTitulo1);
+  }
+  50% {
+    color: var(--corDestaque);
+  }
+  100% {
+    color: var(--corTitulo1);
   }
 }
