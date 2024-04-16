@@ -7,6 +7,7 @@
   --corFundo: #11131a;
   --corTitulo1: #fcfdf9;
   --corDestaque: #ffbb09;
+  --corAuxiliar: #39364b;
 
   /* ANIMAÇÕES */
   --moverParaDireita: moverParaDireita 1s ease forwards;
@@ -14,6 +15,7 @@
   --aparecer: aparecer 1s ease forwards;
   --mexendo: mexendo 4s ease-out infinite;
   --nome: nome 2s ease-in-out;
+  --digitando: digitando 4s steps(15) infinite;
 }
 
 @keyframes moverParaDireita {
@@ -70,5 +72,25 @@
   }
   100% {
     color: var(--corTitulo1);
+  }
+}
+
+@keyframes digitando {
+  0% {
+    border-right: 4px solid var(--corFundo);
+    width: 0;
+  }
+  20% {
+    width: 100%;
+    border: none;
+  }
+
+  80% {
+    width: 100%;
+    border: none;
+  }
+  100% {
+    border-right: 4px solid var(--corFundo);
+    width: 0;
   }
 }
