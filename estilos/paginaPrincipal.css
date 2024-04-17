@@ -75,8 +75,9 @@ body {
   margin-bottom: 100px;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   border-width: 1px;
   border-style: solid;
@@ -94,10 +95,26 @@ body {
 }
 
 #contatos > section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#contatos > p {
+  font-family: var(--fontePrincipal);
+  color: var(--corTitulo1);
+
+  user-select: text;
+
+  padding: 10px;
+  margin: 10px;
+  border-top: 1px solid var(--corDestaque);
+}
+
+#links {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
 }
 
 .contItem {
