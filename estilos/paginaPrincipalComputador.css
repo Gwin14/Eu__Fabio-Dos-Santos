@@ -1,0 +1,43 @@
+@media (min-width: 800px) {
+  body {
+    padding-top: 60px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #tit,
+  #subt {
+    font-size: 8em;
+  }
+
+  #inicio {
+    display: flex;
+  }
+
+  #resumao {
+    width: 40%;
+    font-size: 2em;
+  }
+
+  #divisor {
+    width: 40%;
+  }
+
+  #perfil {
+    width: 45%;
+    transform: translate(0px, -400px);
+  }
+
+  #foto-perfil {
+    border-radius: 30%;
+  }
+
+  #quadrado {
+    display: none;
+  }
+
+  #contatos {
+    width: 40%;
+    transform: translate(0px, -260px);
+  }
+}

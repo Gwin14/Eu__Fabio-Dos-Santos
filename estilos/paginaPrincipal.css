@@ -27,6 +27,8 @@ body {
   font-size: 5em;
   transform: translate(0px, -20px);
   font-weight: bolder;
+
+  animation: var(--moverParaDireita);
 }
 
 #resumao > p {
