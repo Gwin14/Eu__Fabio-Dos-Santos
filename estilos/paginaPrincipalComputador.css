@@ -1,13 +1,12 @@
 @media (min-width: 800px) {
   body {
-    padding-top: 60px;
     padding-left: 5%;
     padding-right: 5%;
   }
 
   #tit,
   #subt {
-    font-size: 8em;
+    font-size: 10vw;
   }
 
   #inicio {
@@ -16,19 +15,26 @@
 
   #resumao {
     width: 40%;
-    font-size: 2em;
+    font-size: 1.5vw;
   }
 
   #divisor {
     width: 40%;
   }
 
+  #inicio {
+    display: flex;
+    background-color: aliceblue;
+  }
+
   #perfil {
-    width: 45%;
-    transform: translate(0px, -400px);
+    position: relative;
+    width: 50%;
+    transform: translate(0px, -30%);
   }
 
   #foto-perfil {
+    position: relative;
     border-radius: 30%;
   }
 
@@ -38,6 +44,5 @@
 
   #contatos {
     width: 40%;
-    transform: translate(0px, -260px);
   }
 }
