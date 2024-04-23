@@ -45,4 +45,29 @@
     width: 40%;
     transform: translate(0px, -100px);
   }
+
+  #euHoje,
+  #skills {
+    display: inline-block;
+    width: 45%;
+    transform: translate(0px, -100px);
+  }
+
+  #skills {
+    margin-left: 10%;
+  }
+
+  #experienciasProfissionais {
+    transform: translate(0px, -100px);
+  }
+
+  #voltarInicio {
+    height: 60px;
+  }
+
+  #euHoje,
+  #experienciasProfissionais {
+    border-radius: 5px;
+    padding: 40px;
+  }
 }
