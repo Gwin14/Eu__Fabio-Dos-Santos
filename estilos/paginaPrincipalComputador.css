@@ -23,8 +23,7 @@
   }
 
   #inicio {
-    display: flex;
-    background-color: aliceblue;
+    max-height: 0px;
   }
 
   #perfil {
@@ -44,5 +43,6 @@
 
   #contatos {
     width: 40%;
+    transform: translate(0px, -100px);
   }
 }
