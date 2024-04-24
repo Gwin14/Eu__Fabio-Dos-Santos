@@ -35,6 +35,8 @@
   #foto-perfil {
     position: relative;
     border-radius: 30%;
+
+    max-width: 700px;
   }
 
   #quadrado {
