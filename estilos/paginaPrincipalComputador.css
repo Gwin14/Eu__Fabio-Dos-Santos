@@ -10,11 +10,12 @@
   }
 
   #inicio {
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 30px;
   }
 
   #resumao {
-    width: 40%;
     font-size: 1.5vw;
   }
 
@@ -27,25 +28,21 @@
   }
 
   #perfil {
-    position: relative;
-    width: 50%;
-    transform: translate(0px, -30%);
+    width: 70%;
   }
 
   #foto-perfil {
-    position: relative;
-    border-radius: 30%;
+    position: inherit;
 
-    max-width: 700px;
+    border-radius: 30%;
   }
 
   #quadrado {
     display: none;
   }
 
-  #contatos {
-    width: 40%;
-    transform: translate(0px, -100px);
+  #informacoes {
+    display: none;
   }
 
   #euHoje,
