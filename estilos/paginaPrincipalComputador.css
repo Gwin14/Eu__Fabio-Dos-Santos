@@ -29,6 +29,7 @@
 
   #perfil {
     width: 70%;
+    transform: translate(0px, -35%);
   }
 
   #foto-perfil {
@@ -42,31 +43,42 @@
   }
 
   #informacoes {
-    display: none;
+    transform: translate(0px, 500px);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr 3fr 1fr;
+    gap: 20px;
   }
 
-  #euHoje,
-  #skills {
-    display: inline-block;
-    width: 45%;
-    transform: translate(0px, -100px);
+  #euHoje {
+    border-radius: 10px 10px 0px 0px;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 
   #skills {
-    margin-left: 10%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
 
   #experienciasProfissionais {
-    transform: translate(0px, -100px);
+    border-radius: 0px 0px 10px 10px;
+
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  #euHoje,
+  #experienciasProfissionais,
+  #skills {
+    margin: 0;
   }
 
   #voltarInicio {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
     height: 60px;
-  }
-
-  #euHoje,
-  #experienciasProfissionais {
-    border-radius: 5px;
-    padding: 40px;
   }
 }
