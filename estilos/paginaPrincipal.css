@@ -81,6 +81,11 @@ body {
   justify-content: center;
   align-items: center;
 
+  background-color: #39364b17;
+  backdrop-filter: blur(2px);
+
+  border-radius: 10px 0px 10px 0px;
+
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient(
@@ -190,6 +195,9 @@ body {
 #tecnologias {
   border: 2px solid var(--corTitulo1);
   border-radius: 5px;
+
+  background-color: #39364b17;
+  backdrop-filter: blur(2px);
 
   padding: 20px;
 }
