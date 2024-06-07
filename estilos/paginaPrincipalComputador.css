@@ -77,6 +77,10 @@
     grid-row: 2 / 3;
   }
 
+  .links {
+    flex-direction: row;
+  }
+
   .contLink {
     width: 40%;
   }
