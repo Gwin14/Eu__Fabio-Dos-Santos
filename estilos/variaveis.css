@@ -36,9 +36,10 @@
 
 @keyframes aparecer {
   from {
-    color: transparent;
+    opacity: 0;
   }
   to {
+    opacity: 1;
   }
 }
 

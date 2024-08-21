@@ -147,6 +147,7 @@ body {
   padding: 20px;
 
   animation: var(--aparecer);
+  animation: var(--moverParaDireita);
 }
 
 #hojeTitulo,
@@ -193,6 +194,8 @@ body {
 }
 
 #tecnologias {
+  animation: var(--moverParaEsquerda);
+
   border: 2px solid var(--corTitulo1);
   border-radius: 5px;
 
@@ -244,6 +247,8 @@ body {
 }
 
 #projetos {
+  animation: var(--moverParaEsquerda);
+
   font-family: var(--fontePrincipal);
   color: var(--corTitulo1);
 
