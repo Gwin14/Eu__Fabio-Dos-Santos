@@ -349,6 +349,13 @@ body {
   width: 50%;
   font-weight: bolder;
   margin: auto;
+  transition: 0.2s;
+}
+
+#baixarCurriculo:hover {
+  background-color: var(--corAuxiliar);
+  color: var(--corDestaque);
+  cursor: pointer;
 }
 
 #formEmail > input,
