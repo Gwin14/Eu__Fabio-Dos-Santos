@@ -327,6 +327,48 @@ body {
   transition: 0.2s;
 }
 
+#titCurriculo,
+#titEmail {
+  margin: 40px;
+  text-align: center;
+  font-family: var(--fontePrincipal);
+  font-weight: bolder;
+  font-size: 2.2em;
+  color: var(--corTitulo1);
+}
+
+#baixarCurriculo {
+  padding: 20px;
+  background-color: var(--corDestaque);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--corAuxiliar);
+  display: block;
+  text-align: center;
+  font-family: var(--fontePrincipal);
+  width: 50%;
+  font-weight: bolder;
+  margin: auto;
+}
+
+#formEmail > input,
+#formEmail > textarea {
+  font-family: var(--fontePrincipal);
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--corAuxiliar);
+  border: 1px solid var(--corTitulo1);
+  outline: none;
+  color: var(--corTitulo1);
+}
+
+#enviar {
+  background-color: var(--corTitulo1);
+  border-radius: 20px;
+}
+
 /* ----------------- */
 
 #divisor {
@@ -353,10 +395,12 @@ body {
 }
 
 #voltarInicio {
+  display: block;
   height: 40px;
   width: 40%;
   color: var(--corTitulo1);
   font-family: var(--fontePrincipal);
+  margin: 20px;
 
   border-radius: 5px;
   background-color: var(--corAuxiliar);
@@ -365,6 +409,7 @@ body {
   display: block;
   margin: auto;
   margin-top: 40px;
+  transform: translate(0px, 300px);
 }
 
 #voltarInicio:hover {
@@ -382,4 +427,8 @@ body {
 
   width: 100%;
   height: 100vh;
+}
+
+#interacaoContato {
+  transform: translate(0px, 300px);
 }
