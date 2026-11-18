@@ -1,30 +1,22 @@
-# fabiosantos.dev.br
+# Desenvolvedor Web
 
-Portfólio de Fábio Santos, desenvolvedor full stack e mobile em Florianópolis.
+Olá! Eu sou um desenvolvedor web apaixonado por criar páginas web incríveis com interações, animações, design e muito mais.
 
-O próprio site é uma demonstração de trabalho:
+## Redes Sociais
+- [Linkedin](https://www.linkedin.com/in/fábio-santos-a05b94241/)
+- [Instagram](https://www.instagram.com/f4bio_santos/#)
 
-- **Retrato revelado ao vivo em WebGL**: seis looks (shader próprio com exposição, balanço de branco, split toning, fade, grão e vinheta) e um divisor para comparar com o original, como nos apps Lutra e Komorebi.
-- **Luz real de Florianópolis**: a posição do sol é calculada no navegador; na hora dourada a foto abre no look "Hora dourada".
-- **Chat "Pergunte sobre mim"** com a API do Claude (`/api/ask`), preso a uma ficha de fatos, com streaming, limite de uso e um índice local quando não há chave.
-- **Paleta de comandos** (⌘K / Ctrl K), que também é o menu no celular.
-- **Português e inglês**, detectado pelo navegador e trocável no topo (`?lang=en`).
-- **Currículo em `/cv`**, gerado do mesmo conteúdo, pronto para imprimir ou salvar em PDF.
+## Experiência Profissional
+Atualmente, trabalho na loja Kharitas, onde desenvolvo designs de estampas, atendo no balcão e realizo sublimação em produtos. Estou nesse emprego desde agosto de 2023.
 
-## Stack
+## Formação Acadêmica
+- **Análise e Desenvolvimento de Sistemas**
+  - **Instituição:** Senac, Palhoça
+  - **Previsão de Conclusão:** Primeiro semestre de 2026
 
-Next.js 16 (App Router, Cache Components), React 19, TypeScript, Tailwind CSS 4, motion, componentes do [React Bits](https://reactbits.dev) (DecryptedText, Magnet, Noise), ícones do simple-icons e `@anthropic-ai/sdk`.
+## Cursos
+- **HackaTruck: Desenvolvimento em Nuvem com Swift**
+- **Ensino Médio em Desenvolvimento de Jogos Digitais**
+- **Curso de Python (6 meses)**
 
-O conteúdo fica todo em `src/content/site.ts`.
-
-## Rodar
-
-```bash
-npm install
-cp .env.example .env.local   # opcional: coloque a ANTHROPIC_API_KEY
-npm run dev
-```
-
-## Publicar
-
-O chat precisa de servidor, então o deploy indicado é a Vercel. Configure `ANTHROPIC_API_KEY` nas variáveis de ambiente do projeto e aponte o domínio `fabiosantos.dev.br` para ele.
+Gosto de estar sempre aprendendo e desenvolvendo novas habilidades. Se precisar entrar em contato, não hesite em me enviar uma mensagem nas minhas redes sociais! 😊🚀
