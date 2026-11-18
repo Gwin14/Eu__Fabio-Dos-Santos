@@ -1,0 +1,419 @@
+@import "tailwindcss";
+
+/* ───────────────────────── Tokens ───────────────────────── */
+:root {
+  --bg: #0d0c0a;
+  --bg-2: #151310;
+  --bg-3: #1d1a16;
+  --line: rgb(236 230 218 / 0.1);
+  --line-2: rgb(236 230 218 / 0.18);
+  --ink: #ece6da;
+  --ink-2: #c9c1b3;
+  --muted: #9c9486;
+  --accent: #f0a23b;
+  --accent-ink: #1a1206;
+  --rec: #e5484d;
+  --ok: #57c28a;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1320px;
+
+  /* movimento (transitions.dev + tasteskill) */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --m-in: 150ms;
+  --m-out: 120ms;
+  --m-press: 90ms;
+  --m-panel: 200ms;
+  --m-slide: 240ms;
+  --m-image: 600ms;
+  --m-image-out: 400ms;
+  --m-cycle: 3.2s;
+  --m-card: 180ms;
+  --m-enter: 700ms;
+  --m-fade: 520ms;
+  --m-settle: 1100ms;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-bg-3: var(--bg-3);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-rec: var(--rec);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-display), var(--font-geist), sans-serif;
+}
+
+@layer components {
+/* ───────────────────────── Base ───────────────────────── */
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  transform: translateY(-160%);
+}
+.skip:focus-visible {
+  transform: none;
+}
+
+/* Seções: uma ideia por tela */
+.screen {
+  position: relative;
+  min-height: 100svh;
+  padding-block: clamp(88px, 12vh, 132px) clamp(56px, 9vh, 96px);
+  border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.4vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.lead {
+  color: var(--ink-2);
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.55;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* ───────────────────────── Botões ───────────────────────── */
+.btn {
+  --btn-bg: var(--accent);
+  --btn-fg: var(--accent-ink);
+  --btn-bd: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--btn-bd);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--m-out) var(--ease),
+    background-color var(--m-out) var(--ease),
+    border-color var(--m-out) var(--ease);
+}
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+  --btn-bd: var(--line-2);
+}
+.btn--sm {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    transform: translateY(-1px);
+    background-color: color-mix(in oklab, var(--btn-bg), var(--ink) 14%);
+    transition-duration: var(--m-in);
+  }
+  .btn--ghost:hover {
+    background-color: rgb(236 230 218 / 0.06);
+    border-color: rgb(236 230 218 / 0.36);
+  }
+  .btn:hover .m-arrow {
+    transform: translateX(3px);
+  }
+}
+.btn:active {
+  transform: translateY(1px) scale(0.985);
+  transition-duration: var(--m-press);
+}
+.m-arrow {
+  transition: transform var(--m-in) var(--ease);
+}
+
+/* Links com sublinhado que desenha */
+.link {
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--line-2), var(--line-2));
+  background-size:
+    0% 1px,
+    100% 1px;
+  background-position:
+    0 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--m-out) var(--ease);
+  padding-bottom: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    background-size:
+      100% 1px,
+      100% 1px;
+    transition-duration: var(--m-in);
+  }
+}
+
+/* Cartões */
+.card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  transition:
+    transform var(--m-out) var(--ease),
+    border-color var(--m-out) var(--ease),
+    box-shadow var(--m-out) var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card--link:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-2);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 0.28);
+    transition:
+      transform var(--m-card) var(--ease),
+      border-color var(--m-card) var(--ease),
+      box-shadow var(--m-card) var(--ease);
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+}
+
+/* ───────────────────────── Entrada do hero ───────────────────────── */
+.enter-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+.enter-line > span {
+  display: inline-block;
+  transform: translateY(105%);
+  animation: rise var(--m-enter) var(--ease-enter) forwards;
+}
+.enter-fade {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp var(--m-fade) var(--ease-enter) forwards;
+}
+.enter-media {
+  transform: scale(1.05);
+  animation: settle var(--m-settle) var(--ease-enter) forwards;
+}
+@keyframes rise {
+  to {
+    transform: none;
+  }
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes settle {
+  to {
+    transform: none;
+  }
+}
+
+/* Indicadores */
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--rec);
+  animation: blink var(--m-cycle) linear infinite;
+}
+@keyframes blink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2620;
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .enter-line > span,
+  .enter-fade,
+  .enter-media {
+    transform: none;
+    opacity: 1;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Impressão (currículo) */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ───────────────────────── Miniaturas dos apps ───────────────────────── */
+.v-komorebi {
+  background:
+    radial-gradient(40% 50% at 70% 30%, rgb(255 214 140 / 0.55), transparent 70%),
+    linear-gradient(180deg, #3d6d8c 0%, #87a7ad 48%, #d9c29a 70%, #8f7d61 100%);
+  animation: lutShift var(--m-cycle) linear infinite;
+}
+@keyframes lutShift {
+  0%, 100% { filter: none; }
+  20% { filter: none; }
+  25%, 45% { filter: sepia(0.35) saturate(1.2) hue-rotate(-8deg); }
+  50%, 70% { filter: saturate(0.7) contrast(1.15) hue-rotate(10deg); }
+  75%, 95% { filter: grayscale(1) contrast(1.2); }
+}
+.v-lut { animation: lutPick var(--m-cycle) linear infinite; transform-origin: bottom; }
+@keyframes lutPick {
+  0%, 18% { transform: scaleY(1.25); outline: 2px solid var(--accent); outline-offset: 1px; }
+  20%, 100% { transform: none; outline: none; }
+}
+.v-focus { animation: focusPulse var(--m-cycle) var(--ease) infinite; }
+@keyframes focusPulse {
+  0% { transform: scale(1.35); opacity: 0; }
+  12% { transform: scale(1); opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.v-bar { transform-box: fill-box; transform-origin: bottom; animation: barMove var(--m-cycle) var(--ease-io) infinite alternate; }
+@keyframes barMove { to { transform: scaleY(0.72); } }
+.v-knob { animation: knob var(--m-cycle) var(--ease-io) infinite alternate; }
+@keyframes knob { to { transform: translate(-14px, 12px); } }
+.v-wipe { animation: wipe var(--m-cycle) var(--ease-io) infinite; }
+@keyframes wipe {
+  0% { clip-path: inset(0 100% 0 0); }
+  45%, 80% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 0 100%); }
+}
+.v-gauge { stroke-dashoffset: var(--len); animation: gauge var(--m-cycle) var(--ease-enter) infinite; }
+@keyframes gauge {
+  0% { stroke-dashoffset: var(--len); }
+  45%, 85% { stroke-dashoffset: calc(var(--len) * 0.22); }
+  100% { stroke-dashoffset: calc(var(--len) * 0.22); opacity: 0.4; }
+}
+.v-sun {
+  offset-path: path("M20 150 Q150 -10 280 150");
+  offset-rotate: 0deg;
+  left: 0; top: 0;
+  translate: -8px -8px;
+  animation: sunPath var(--m-cycle) var(--ease-io) infinite alternate;
+}
+@keyframes sunPath { from { offset-distance: 8%; } to { offset-distance: 92%; } }
+.v-line { opacity: 0; animation: lineIn var(--m-cycle) steps(1) infinite; }
+@keyframes lineIn { 0% { opacity: 0; } 4%, 92% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-line { opacity: 1; }
+  .v-gauge { stroke-dashoffset: calc(var(--len) * 0.22); }
+  .v-wipe { clip-path: inset(0 0 0 50%); }
+  .v-sun { offset-distance: 40%; }
+}
